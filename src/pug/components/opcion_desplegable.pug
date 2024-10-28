@@ -1,0 +1,23 @@
+mixin opcion_menu(icono, texto, marcado, ref)
+    .opcionMenu 
+        hr
+        if (marcado == false)
+            .opcion__link
+                a(href=ref)
+                    if (icono != '')
+                        img.opcion__icono(src= icono, alt="icono_menu")
+                        p.opcion__texto= texto
+                    else
+                        p.opcion__texto= texto
+        else 
+            .opcion__link--marcado
+                a(href="#")
+                    if (icono != '')
+                        .opcion--seleccion
+                        img.opcion__icono(src= icono, alt="icono_menu")
+                        p.opcion__texto= texto
+                    else
+                        .opcion--seleccion
+                        p.opcion__texto= texto
+                        
+                     

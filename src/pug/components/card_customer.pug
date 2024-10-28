@@ -1,0 +1,23 @@
+mixin card_clientes(customers)
+    each customer, index in customers
+        - var title = customer.title || false;
+        - var subtitle = customer.subtitle || false;
+        - var icon = customer.icon;
+        - var altIcon = customer.altIcon;
+        - var customerData = customer.customerData || false;
+
+        .customer-card(id='customer-' + index)
+            .customer-card__top 
+                if icon
+                    button.customer-card__deleteBtn(onclick=`delete_CustomerCard('customer-${index}')`)
+                        img.customer-card__icon(src=icon alt=altIcon)
+                .customer-card__titleInfo
+                    if title
+                        h3.customer-card__title!= title 
+                    if subtitle 
+                        p.customer-card__subtitle!= subtitle 
+            .customer-card__customerInfo
+                if customerData
+                    each info in customerData
+                        p!= info
+

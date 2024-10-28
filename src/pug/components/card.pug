@@ -1,0 +1,11 @@
+mixin contenido_card(titulo)
+    .contenedor 
+        h3.contenedor__h3= titulo
+        .contenedor__inputs
+            include input_text
+            +input_text('Correo principal', 'ejemplo@email.com')
+            +input_text('Correo 2', 'ejemplo@email.com')
+            +input_text('Teléfono principal', '+34 123 456 789')
+        include button
+        +button('__secondary', 'Guardar')
+

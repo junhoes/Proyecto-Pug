@@ -1,0 +1,20 @@
+mixin tag(state, iconSrc, tagText)
+    - var icon = iconSrc;
+    - var text = tagText;
+        .tag
+            if state == "error"
+                .tag--error
+                    img(src=icon, alt="error_icon")
+                    p Vencido
+            else if state == "success"
+                .tag--success
+                    img(src=icon, alt="success_icon")
+                    p Pagada
+            else if state == "progress" 
+                .tag--progress
+                    img(src=icon, alt="success_icon")
+                    p Pendiente
+            else
+                .tag--grey
+                    img(src=icon, alt="success_icon")
+                    p!= text

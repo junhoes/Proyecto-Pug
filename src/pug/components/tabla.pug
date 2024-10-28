@@ -1,0 +1,23 @@
+include ../fragments/tag
+mixin container_data_table(contents)
+    .table-header 
+        - var head = contents[0].head;
+        each title in head
+            p.table__title!= title
+
+    each content in contents 
+        - var head = content.head;
+        - var data = content.data;
+        - var status = content.status || false;
+        .table-card
+            each title, index in head
+                .table-card__info
+                    p.table-card__title!= title
+                    p.table-card__data!= data[index]
+                    if (title == 'Estado')
+                        if (status == 'success')
+                            +tag("success", "../../images/success.png") 
+                        else if (status == 'error')
+                            +tag("error", "../../images/error.png")
+                        else if (status == 'progress') 
+                            +tag("progress", "../../images/clock.png")

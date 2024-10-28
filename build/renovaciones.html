@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/main.min.css" rel="stylesheet" media="all">
+    <link rel="icon" href="images/favicon.png" sizes="32x32" type="image/png">
+    <title>Renovaciones</title>
+  </head>
+  <body>
+    <header class="header" id="header">
+      <div class="header__container">
+        <div class="container__logo"><a href=""> <img src="../../images/Logo_TotalEnergies.png" alt="logo secura insurance"></a></div>
+        <div class="container__links"> 
+          <div class="container__links--nav">
+                  <div class="opcionMenu"> 
+                    <hr>
+                    <div class="opcion__link--marcado"><a href="#">
+                        <div class="opcion--seleccion"></div>
+                        <p class="opcion__texto">Inicio</p></a></div>
+                  </div>
+                  <div class="opcionMenu"> 
+                    <hr>
+                    <div class="opcion__link"><a href="../renovaciones.html">
+                        <p class="opcion__texto">Próximas renovaciones</p></a></div>
+                  </div>
+            <hr>
+          </div>
+          <div class="container__links--idiomas container__idioma"> 
+            <button class="container__button container__button--idioma" onclick="apareceDropdown(&quot;dropdown_container--idiomas--links&quot;)"><img class="icon--main" src="../../images/globe.png" alt="icono_idiomas">
+              <p href="">Español</p><img class="icon--dropDown" src="../../images/arrow-dropdown.png" alt="">
+              <div class="dropdown_container--idiomas--links"> <a href="#"> 
+                  <div class="idioma eng">English </div></a><a href="#"> 
+                  <div class="idioma cat">Catalan</div></a><a href="#"> 
+                  <div class="idioma gal">Gallego</div></a><a href="#"> 
+                  <div class="idioma eus">Euskera  </div></a></div>
+            </button>
+          </div>
+        </div>
+        <div class="container__desplegables">
+          <div class="container__miPerfil">
+            <button class="container__button container__button--perfil" onclick="apareceSidebar(&quot;dropdown_container--perfil&quot;)"><img class="icon--main" src="../../images/user.png" alt="icono_perfil">
+              <p>Mi perfil</p><img class="icon--dropDown" src="../../images/arrow-dropdown.png" alt="">
+            </button>
+            <div class="dropdown_container--perfil"> 
+              <div class="miPerfil"> 
+                <p>Mi Perfil </p>
+                <p>En este espacio puedes acceder, modificar, gestionar y consultar todo lo relacionado con tus servicios de energía. Fácil y rápido. </p>
+              </div>
+              <div class="dropdown__buttons"> 
+                      <div class="opcionMenu"> 
+                        <hr>
+                        <div class="opcion__link--marcado"><a href="#">
+                            <div class="opcion--seleccion"></div><img class="opcion__icono" src="../../images/user.png" alt="icono_menu">
+                            <p class="opcion__texto">Mis datos personales</p></a></div>
+                      </div>
+                      <div class="opcionMenu"> 
+                        <hr>
+                        <div class="opcion__link"><a href="#"><img class="opcion__icono" src="../../images/lock.png" alt="icono_menu">
+                            <p class="opcion__texto">Mi contraseña</p></a></div>
+                      </div>
+                      <div class="opcionMenu"> 
+                        <hr>
+                        <div class="opcion__link"><a href="#"><img class="opcion__icono" src="../../images/phone.png" alt="icono_menu">
+                            <p class="opcion__texto">Contacto</p></a></div>
+                      </div>
+                      <div class="opcionMenu"> 
+                        <hr>
+                        <div class="opcion__link"><a href="#"><img class="opcion__icono" src="../../images/power-off.png" alt="icono_menu">
+                            <p class="opcion__texto">Cerrar sesión</p></a></div>
+                      </div>
+              </div>
+            </div>
+          </div>
+          <div class="container__desplegable--idioma container__idioma"> 
+            <button class="container__button container__button--idioma" onclick="apareceDropdown(&quot;dropdown_container--idiomas&quot;)"><img class="icon--main" src="../../images/globe.png" alt="icono_idiomas">
+              <p href="">Español</p><img class="icon--dropDown" src="../../images/arrow-dropdown.png" alt="">
+            </button>
+            <div class="dropdown_container--idiomas dropdown_container--idiomas--desplegables"> <a href="#">
+                <div class="idioma esp">Español </div></a>
+              <hr><a href="#"> 
+                <div class="idioma eng">English </div></a>
+              <hr><a href="#"> 
+                <div class="idioma cat">Catalan</div></a>
+              <hr><a href="#"> 
+                <div class="idioma gal">Gallego</div></a>
+              <hr><a href="#"> 
+                <div class="idioma eus">Euskera  </div></a>
+            </div>
+          </div>
+          <div class="container__burger">           
+            <button class="iconos__boton--burger" onclick="apareceSidebar(&quot;container__links&quot;); cambiarIcono()"> <img class="icono_burger" src="../../images/burger_menu.png" alt="icono_burger"></button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main-content" id="main-content">
+            <div class="subheader">
+                    <div class="breadcrumbs">
+                      <ul class="breadcrumbs__list">
+                        <li class="crumb"><a href="home.html"> Pólizas</a></li>
+                        <li class="crumb crumb--current"><span>Próximas renovaciones</span></li>
+                      </ul>
+                    </div>
+              <div class="subheader--info">
+                <h3>Próximas renovaciones</h3>
+                      <div class="tag">
+                        <div class="tag--grey"><img src="../images/archivo.png" alt="success_icon">
+                          <p>770 Pólizas</p>
+                        </div>
+                      </div>
+              </div>
+            </div>
+            <div class="opcionesTabla">
+              <div class="opcionesTabla--ordenar">
+                <div class="opcionesTabla--selector">
+                        <div class="custom-select">
+                          <label for="mayormenor">Ordenar por: </label>
+                          <select name="mayormenor" id="mayormenor">
+                            <option value="mayorImporte">Mayor importe</option>
+                            <option value="menorImporte">Menor importe</option>
+                          </select>
+                        </div>
+                </div>
+                <p class="numFacturas">550 facturas</p>
+              </div>
+              <div class="opcionesTabla--abrirFiltros">
+                <button class="abrirFiltros" onclick="apareceFiltros(&quot;menuFiltros&quot;)"><img src="../images/filter.png" alt="filter icon">
+                  <p>Filtros</p>
+                </button>
+              </div>
+            </div>
+            <div class="menuFiltros"> 
+              <div class="menuFiltros--header">  
+                <p>Filtros</p>
+                <button class="cerrarFiltros" onclick="apareceFiltros(&quot;menuFiltros&quot;)"><img src="../images/close.png" alt="close icon"></button>
+              </div>
+              <div class="menuFiltros--opciones">
+                <div class="selector--poliza">
+                        <div class="custom-select">
+                          <label for="numPoliza">No. de póliza</label>
+                          <select name="numPoliza" id="numPoliza">
+                            <option value="totalPolizas">Todas las pólizas</option>
+                            <option value="num1">75846843</option>
+                          </select>
+                        </div>
+                </div>
+                      <div class="bloqueText">
+                        <label class="bloque__label" for="nameRiesgo">Nombre del riesgo</label>
+                        <input class="bloque__input" type="text" id="nameRiesgo" name="nameRiesgo" placeholder="Introduce el nombre del riesgo">
+                      </div>
+                      <div class="bloqueText">
+                        <label class="bloque__label" for="importeRiesgo">Importe</label>
+                        <input class="bloque__input" type="text" id="importeRiesgo" name="importeRiesgo" placeholder="Introduzca importe">
+                      </div>
+                <div class="selector--estado"> 
+                        <div class="custom-select">
+                          <label for="estadoRiesgo">Estado</label>
+                          <select name="estadoRiesgo" id="estadoRiesgo">
+                            <option value="totalEstados">Todos los estados</option>
+                            <option value="pendiente">Pendiente</option>
+                            <option value="pagado">Pagada</option>
+                            <option value="vencido">Vencido</option>
+                          </select>
+                        </div>
+                </div>
+              </div>
+            </div>
+            <div class="table-header"> 
+              <p class="table__title">Nº de póliza</p>
+              <p class="table__title">Nombre del riesgo</p>
+              <p class="table__title">Fecha de contrato</p>
+              <p class="table__title">Fecha de vencimiento</p>
+              <p class="table__title">Importe</p>
+              <p class="table__title">Estado</p>
+            </div>
+            <div class="table-card">
+              <div class="table-card__info">
+                <p class="table-card__title">Nº de póliza</p>
+                <p class="table-card__data">75845843</p>
+              </div>
+              <div class="table-card__info">
+                <p class="table-card__title">Nombre del riesgo</p>
+                <p class="table-card__data">Hyundai Ioniq</p>
+              </div>
+              <div class="table-card__info">
+                <p class="table-card__title">Fecha de contrato</p>
+                <p class="table-card__data">01/12/2022</p>
+              </div>
+              <div class="table-card__info">
+                <p class="table-card__title">Fecha de vencimiento</p>
+                <p class="table-card__data">01/12/2023</p>
+              </div>
+              <div class="table-card__info">
+                <p class="table-card__title">Importe</p>
+                <p class="table-card__data"><strong>30.203,76€</strong></p>
+              </div>
+              <div class="table-card__info">
+                <p class="table-card__title">Estado</p>
+                <p class="table-card__data"></p>
+                      <div class="tag">
+                        <div class="tag--success"><img src="../../images/success.png" alt="success_icon">
+                          <p>Pagada</p>
+                        </div>
+                      </div>
+              </div>
+            </div>
+            <div class="table-card">
+              <div class="table-card__info">
+                <p class="table-card__title">Nº de póliza</p>
+                <p class="table-card__data">75845843</p>
+              </div>
+              <div class="table-card__info">
+                <p class="table-card__title">Nombre del riesgo</p>
+                <p class="table-card__data">Hyundai Ioniq</p>
+              </div>
+              <div class="table-card__info">
+                <p class="table-card__title">Fecha de contrato</p>
+                <p class="table-card__data">01/12/2022</p>
+              </div>
+              <div class="table-card__info">
+                <p class="table-card__title">Fecha de vencimiento</p>
+                <p class="table-card__data">01/12/2023</p>
+              </div>
+              <div class="table-card__info">
+                <p class="table-card__title">Importe</p>
+                <p class="table-card__data"><strong>30.203,76€</strong></p>
+              </div>
+              <div class="table-card__info">
+                <p class="table-card__title">Estado</p>
+                <p class="table-card__data"></p>
+                      <div class="tag">
+                        <div class="tag--error"><img src="../../images/error.png" alt="error_icon">
+                          <p>Vencido</p>
+                        </div>
+                      </div>
+              </div>
+            </div>
+            <div class="table-card">
+              <div class="table-card__info">
+                <p class="table-card__title">Nº de póliza</p>
+                <p class="table-card__data">75845843</p>
+              </div>
+              <div class="table-card__info">
+                <p class="table-card__title">Nombre del riesgo</p>
+                <p class="table-card__data">Hyundai Ioniq</p>
+              </div>
+              <div class="table-card__info">
+                <p class="table-card__title">Fecha de contrato</p>
+                <p class="table-card__data">01/12/2022</p>
+              </div>
+              <div class="table-card__info">
+                <p class="table-card__title">Fecha de vencimiento</p>
+                <p class="table-card__data">01/12/2023</p>
+              </div>
+              <div class="table-card__info">
+                <p class="table-card__title">Importe</p>
+                <p class="table-card__data"><strong>30.203,76€</strong></p>
+              </div>
+              <div class="table-card__info">
+                <p class="table-card__title">Estado</p>
+                <p class="table-card__data"></p>
+                      <div class="tag">
+                        <div class="tag--progress"><img src="../../images/clock.png" alt="success_icon">
+                          <p>Pendiente</p>
+                        </div>
+                      </div>
+              </div>
+            </div>
+            <div class="table-card">
+              <div class="table-card__info">
+                <p class="table-card__title">Nº de póliza</p>
+                <p class="table-card__data">75845843</p>
+              </div>
+              <div class="table-card__info">
+                <p class="table-card__title">Nombre del riesgo</p>
+                <p class="table-card__data">Hyundai Ioniq</p>
+              </div>
+              <div class="table-card__info">
+                <p class="table-card__title">Fecha de contrato</p>
+                <p class="table-card__data">01/12/2022</p>
+              </div>
+              <div class="table-card__info">
+                <p class="table-card__title">Fecha de vencimiento</p>
+                <p class="table-card__data">01/12/2023</p>
+              </div>
+              <div class="table-card__info">
+                <p class="table-card__title">Importe</p>
+                <p class="table-card__data"><strong>30.203,76€</strong></p>
+              </div>
+              <div class="table-card__info">
+                <p class="table-card__title">Estado</p>
+                <p class="table-card__data"></p>
+                      <div class="tag">
+                        <div class="tag--success"><img src="../../images/success.png" alt="success_icon">
+                          <p>Pagada</p>
+                        </div>
+                      </div>
+              </div>
+            </div>
+            <div class="table-card">
+              <div class="table-card__info">
+                <p class="table-card__title">Nº de póliza</p>
+                <p class="table-card__data">75845843</p>
+              </div>
+              <div class="table-card__info">
+                <p class="table-card__title">Nombre del riesgo</p>
+                <p class="table-card__data">Hyundai Ioniq</p>
+              </div>
+              <div class="table-card__info">
+                <p class="table-card__title">Fecha de contrato</p>
+                <p class="table-card__data">01/12/2022</p>
+              </div>
+              <div class="table-card__info">
+                <p class="table-card__title">Fecha de vencimiento</p>
+                <p class="table-card__data">01/12/2023</p>
+              </div>
+              <div class="table-card__info">
+                <p class="table-card__title">Importe</p>
+                <p class="table-card__data"><strong>30.203,76€</strong></p>
+              </div>
+              <div class="table-card__info">
+                <p class="table-card__title">Estado</p>
+                <p class="table-card__data"></p>
+                      <div class="tag">
+                        <div class="tag--progress"><img src="../../images/clock.png" alt="success_icon">
+                          <p>Pendiente</p>
+                        </div>
+                      </div>
+              </div>
+            </div>
+            <div class="table-card">
+              <div class="table-card__info">
+                <p class="table-card__title">Nº de póliza</p>
+                <p class="table-card__data">75845843</p>
+              </div>
+              <div class="table-card__info">
+                <p class="table-card__title">Nombre del riesgo</p>
+                <p class="table-card__data">Hyundai Ioniq</p>
+              </div>
+              <div class="table-card__info">
+                <p class="table-card__title">Fecha de contrato</p>
+                <p class="table-card__data">01/12/2022</p>
+              </div>
+              <div class="table-card__info">
+                <p class="table-card__title">Fecha de vencimiento</p>
+                <p class="table-card__data">01/12/2023</p>
+              </div>
+              <div class="table-card__info">
+                <p class="table-card__title">Importe</p>
+                <p class="table-card__data"><strong>30.203,76€</strong></p>
+              </div>
+              <div class="table-card__info">
+                <p class="table-card__title">Estado</p>
+                <p class="table-card__data"></p>
+                      <div class="tag">
+                        <div class="tag--error"><img src="../../images/error.png" alt="error_icon">
+                          <p>Vencido</p>
+                        </div>
+                      </div>
+              </div>
+            </div>
+    </main>
+    <footer class="footer" id="footer">
+      <div class="footer__container">
+        <div class="footer__information">
+          <div class="footer__information--left">
+            <p class="information--title">¿Necesitas ayuda?</p>
+            <div class="information--email"><a href="mailto:someone@example.com"><img src="../../images/mail.png" alt="mail_icon">
+                <p>atencionalcliente@securainsurance.com</p></a></div>
+            <div class="information--phone"><a href="tel:+34900926676"> <img src="../../images/phone.png" alt="phone_icon">
+                <p>900 926 676</p></a></div>
+          </div>
+          <div class="footer_information--right">
+            <p>SECURA INSURANCE ESPAÑA, S.A.U</p>
+            <p>Calle Ribera del Loira 46, Madrid, 28042</p>
+          </div>
+        </div>
+        <div class="footer__links">
+          <div class="footer__links--left"><a href="">Política de cookies </a><a href="">Aviso legal </a><a href="">Política de privacidad</a></div>
+          <div class="footer__links--right"> <img src="../../images/copyright.png" alt="copyright_icon">
+            <p>2022 SecuraInsurance</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>

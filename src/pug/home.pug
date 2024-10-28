@@ -1,0 +1,71 @@
+extends layouts/layout-home
+
+block vars
+    - var pageTitle = "Homepage";
+
+block header
+    title Homepage
+
+block content
+    include components/banner
+    +banner('Bienvenido a tu área personal', 'Gracias a ti más personas pueden disfrutar de una vida más segura')
+
+    include components/tabla
+
+    h3.tituloHome Próximas renovaciones 
+    +container_data_table([
+        {
+            head: [
+                'Nº de póliza', 'Nombre del riesgo', 'Fecha de contrato', 'Fecha de vencimiento', 'Importe', 'Estado'
+            ],   
+            data: [
+                '75845843', 'Hyundai Ioniq', '01/12/2022', '01/12/2023', '<strong>30.203,76€</strong>'
+            ],
+            status: 'success'
+        },
+        {
+            head: [
+                'Nº de póliza', 'Nombre del riesgo', 'Fecha de contrato', 'Fecha de vencimiento', 'Importe', 'Estado'
+                ],   
+            data: [
+                '75845843', 'Hyundai Ioniq', '01/12/2022', '01/12/2023', '<strong>30.203,76€</strong>'
+            ],
+            status: 'success'
+        }
+    ]
+    )
+    include components/button
+    +button('', 'Ver todas')
+
+    h3.tituloHome Clientes potenciales 
+    include components/card_customer
+    .container_clientesPotenciales
+        +card_clientes([
+            {
+                title: 'José Carlos Rodríguez',
+                subtitle: 'Producto a ofrecer: Seguro de moto',
+                icon: 'images/trash.png',
+                customerData: [
+                    'Email: jose.rod@gmail.com',
+                    'Teléfono: +34 258 632 555'
+                ]
+            },
+            {
+                title: 'Ana Perffeti',
+                subtitle: 'Producto a ofrecer: Seguro de casa',
+                icon: 'images/trash.png',
+                customerData: [
+                    'Email: ana.per@gmail.com',
+                    'Teléfono: +34 258 632 444'
+                ]
+            },
+                        {
+                title: 'José Carlos Rodríguez',
+                subtitle: 'Producto a ofrecer: Seguro de moto',
+                icon: 'images/trash.png',
+                customerData: [
+                    'Email: jose.rod@gmail.com',
+                    'Teléfono: +34 258 632 555'
+                ]
+            }
+        ])

@@ -1,0 +1,29 @@
+.bloqueText{
+    height: fit-content;
+    margin: 0px!important;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+.bloque__label{
+    font-weight: 700;
+    width: auto;
+    padding-left: 0px !important;
+    color: $textLink !important;
+}
+.bloque__input{
+    border: 1px solid #E1E6EF;
+    border-radius: 8px;
+    color: #1D2433CC;
+    padding: 8px 9px 8px 9px;
+    background-color: $white;
+    font-family: $fontReg;
+    font-size: 16px;
+    margin-top: 30px;
+    
+    &:focus {
+        border: 1px solid $primary75;
+        outline: none;
+    }
+}

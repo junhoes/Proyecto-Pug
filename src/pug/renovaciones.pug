@@ -1,0 +1,77 @@
+extends layouts/layout-home
+
+block vars
+    - var pageTitle = "Homepage";
+
+block header
+    title Renovaciones
+
+block content
+    include components/subheader
+    +subheader([
+        {
+            title: 'Próximas renovaciones',
+            polizas: '770'
+        }
+    ])
+
+    include components/filtros
+    +filtros('550')
+
+    include components/tabla
+    +container_data_table([
+        {
+            head: [
+                'Nº de póliza', 'Nombre del riesgo', 'Fecha de contrato', 'Fecha de vencimiento', 'Importe', 'Estado'
+            ],   
+            data: [
+                '75845843', 'Hyundai Ioniq', '01/12/2022', '01/12/2023', '<strong>30.203,76€</strong>'
+            ],
+            status: 'success'
+        },
+        {
+            head: [
+                'Nº de póliza', 'Nombre del riesgo', 'Fecha de contrato', 'Fecha de vencimiento', 'Importe', 'Estado'
+                ],   
+            data: [
+                '75845843', 'Hyundai Ioniq', '01/12/2022', '01/12/2023', '<strong>30.203,76€</strong>'
+            ],
+            status: 'error'
+        },
+            {
+            head: [
+                'Nº de póliza', 'Nombre del riesgo', 'Fecha de contrato', 'Fecha de vencimiento', 'Importe', 'Estado'
+                ],   
+            data: [
+                '75845843', 'Hyundai Ioniq', '01/12/2022', '01/12/2023', '<strong>30.203,76€</strong>'
+            ],
+            status: 'progress'
+        },
+            {
+            head: [
+                'Nº de póliza', 'Nombre del riesgo', 'Fecha de contrato', 'Fecha de vencimiento', 'Importe', 'Estado'
+                ],   
+            data: [
+                '75845843', 'Hyundai Ioniq', '01/12/2022', '01/12/2023', '<strong>30.203,76€</strong>'
+            ],
+            status: 'success'
+        },
+            {
+            head: [
+                'Nº de póliza', 'Nombre del riesgo', 'Fecha de contrato', 'Fecha de vencimiento', 'Importe', 'Estado'
+                ],   
+            data: [
+                '75845843', 'Hyundai Ioniq', '01/12/2022', '01/12/2023', '<strong>30.203,76€</strong>'
+            ],
+            status: 'progress'
+        },        {
+            head: [
+                'Nº de póliza', 'Nombre del riesgo', 'Fecha de contrato', 'Fecha de vencimiento', 'Importe', 'Estado'
+                ],   
+            data: [
+                '75845843', 'Hyundai Ioniq', '01/12/2022', '01/12/2023', '<strong>30.203,76€</strong>'
+            ],
+            status: 'error'
+        }
+    ]
+    )

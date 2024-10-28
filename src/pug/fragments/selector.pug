@@ -1,0 +1,15 @@
+mixin selector(contents)
+    each content in contents
+        - var selName = content.name
+        - var labelText = content.labelText
+        - var options = content.options
+            .select--text(class!= selName)!= labelText
+            .select
+                each option in options
+                    .select--option
+
+            //- .custom-select
+            //-     label(for=selName)!= labelText
+            //-     select(name!= selName id!= selName)
+            //-         each option in options
+            //-             option(value!= option[0])!= option[1]

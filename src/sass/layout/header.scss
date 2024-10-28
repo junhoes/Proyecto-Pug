@@ -1,0 +1,300 @@
+body {
+    overflow-y: scroll;
+}
+
+.header__container {
+    width: 100%;
+    background-color: $white;
+    font-size: 16px;
+    font-family: $fontReg;
+    color: $textLink;
+    display: flex;
+    position: relative;
+    border-bottom: 1px solid $hr;
+    padding: 16px 88px 16px 88px;
+    align-items: center;
+}
+
+.container__logo {
+    width: auto;
+    height: 64px;
+}
+
+.container__links {
+    display: flex;
+}
+.container__desplegables {
+    margin-left: auto;
+    margin-right: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+}
+
+.container__miPerfil, .container__idioma {
+    position: relative;
+    display: inline-block;
+
+    .container__button {
+        width: 134px;
+        height: 40px;
+        padding: 8px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        outline: inherit;
+
+        img {
+            float: left;
+            display: block;
+        }
+
+        p {
+            float: left;
+            text-decoration: none;
+            font-family: $fontReg;
+        }
+    }
+}
+
+.container__button>* {
+    margin-right: 8px;
+}
+
+//******* Dropdown idiomas *********
+.dropdown_container--idiomas, .dropdown_container--idiomas--links {
+    display: none;
+    width: 131px;
+    height: fit-content;
+    text-align: center;
+    font-family: $fontReg;
+    color: $textLink;
+    background-color: $white;
+    border-radius: 12px;
+    box-shadow: $shadow-card;
+    position: absolute;
+    top: 55px;
+    animation: growDown 300ms ease-in-out forwards;
+    transform-origin: top center;
+
+    a {
+        text-decoration: none;
+        font-family: $fontReg;
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        &:active {
+            color: $textLink;
+        }
+
+        &:visited {
+            color: $textLink;
+        }
+
+        &:link {
+            color: $textLink;
+        }
+
+        .idioma {
+            padding: 10px 24px 10px 24px;
+
+            &:hover {
+                background-color: #E6E7E8;
+            }
+        }
+    }
+}
+
+.dropdown_container--idiomas a:first-child div {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.dropdown_container--idiomas a:last-child div {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+hr {
+    margin: 0;
+    border: 1px solid $hr;
+}
+
+//******* Dropdown mi perfil *********
+
+.dropdown_container--perfil {
+    display: none;
+    width: 375px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: $shadow-card;
+    font-family: $fontReg;
+    background-color: $white;
+    position: absolute;
+    right: 15px;
+    top: 55px;
+    animation: growDown 300ms ease-in-out forwards;
+    transform-origin: top center;
+
+    .miPerfil {
+        padding: 24px;
+    }
+
+    .miPerfil p:first-child {
+        font-family: $fontBold;
+    }
+
+    .miPerfil p:last-child {
+        margin-top: 24px;
+    }
+}
+
+@keyframes growDown {
+    0% {
+        transform: scaleX(0)
+    }
+
+    80% {
+        transform: scaleX(1.1)
+    }
+
+    100% {
+        transform: scaleX(1)
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}
+
+.show {
+    display: flex !important;
+    flex-direction: column;
+    z-index: 10;
+}
+
+
+button {
+    border: none;
+    background-color: transparent;
+}
+
+@media (min-width: $tablet) {
+    .header__container {
+        flex-direction: row;
+    }
+
+    .container__links {
+        flex-direction: row;
+
+        .container__links--idiomas{
+            display: none;
+        }
+
+        .container__links--nav {
+            display: flex;
+            flex-direction: row;
+            font-family: $fontBold!important;
+    
+            hr {
+                display: none;
+            }
+
+            .opcion--seleccion {
+                display: none;
+            }
+        }
+    }
+
+    .container__links--nav > * {
+        width: fit-content!important;
+    }
+
+    .container__burger {
+            display: none;
+        }
+}
+
+@media (max-width: $mobilexlMax) {
+    .header__container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 80px;
+        padding: 8px 16px 8px 16px;
+
+        .container__logo {
+            order: 1;
+            width: 50%;
+        }
+        .container__links {
+            order: 3;
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .container__desplegables {
+            order: 2;
+            width: 50%;
+            justify-content: flex-end;
+
+            .container__button--perfil {
+                width: fit-content;
+            }
+
+            .container__button--perfil p, .container__button--perfil img:last-child {
+                display: none;
+            }
+
+            .container__idioma {
+                display: none;
+            }
+        }
+    }
+
+    .container__links, .dropdown_container--perfil  {
+        position: fixed;
+        top: 80px;
+        left: 0px;
+        bottom: 0px;
+        width: 100%;
+        overflow: auto;
+        background-color: $white;
+    }
+
+    .dropdown_container--perfil, .dropdown_container--idiomas--links  {
+        box-shadow: none;
+        border-radius: 0px;
+    }
+
+    .container__links--idiomas {
+        margin-left: 20px;
+        margin-bottom: 20px;
+        .dropdown_container--idiomas--links  {
+            top: 40px;
+        }
+    }
+}
+
+@media (min-width: $tablet) and (max-width: $tabletMax) {
+    .header__container {
+        padding: 16px 40px 16px 40px;
+    }
+}

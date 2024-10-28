@@ -1,0 +1,60 @@
+include ../fragments/selector
+include ../components/input_text
+mixin filtros(facturas)
+    .opcionesTabla
+        .opcionesTabla--ordenar
+            .opcionesTabla--selector
+                +selector([
+                    {
+                    name: 'mayormenor',
+                    labelText: 'Ordenar por: ',
+                    options: [
+                        ['mayorImporte', 'Mayor importe'],
+                        ['menorImporte', 'Menor importe'],
+                    ]
+                    }   
+                ])
+            p.numFacturas #{facturas} facturas
+        .opcionesTabla--abrirFiltros
+            button.abrirFiltros(onclick='apareceFiltros("menuFiltros")')
+                img(src="../images/filter.png", alt="filter icon")
+                p Filtros
+    .menuFiltros 
+        .menuFiltros--header   
+            p Filtros
+            button.cerrarFiltros(onclick='apareceFiltros("menuFiltros")')
+                img(src="../images/close.png", alt="close icon")
+        .menuFiltros--opciones
+            .selector--poliza
+                +selector([
+                    {
+                        name: 'numPoliza',
+                        labelText: 'No. de póliza',
+                        options: [
+                            ['totalPolizas', 'Todas las pólizas'],
+                            ['num1', '75846843']
+                        ]
+                    }
+                ])
+            +input_text('Nombre del riesgo', 'Introduce el nombre del riesgo', 'nameRiesgo')
+
+            //- fecha
+
+            +input_text('Importe', 'Introduzca importe', 'importeRiesgo')
+
+            .selector--estado 
+                +selector([
+                    {
+                        name: 'estadoRiesgo',
+                        labelText: 'Estado',
+                        options: [
+                            ['totalEstados', 'Todos los estados'],
+                            ['pendiente', 'Pendiente'],
+                            ['pagado', 'Pagada'],
+                            ['vencido', 'Vencido']
+                        ]
+                    }
+                ])
+
+            //-checkboxes
+

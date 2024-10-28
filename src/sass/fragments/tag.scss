@@ -1,0 +1,39 @@
+.tag {
+    width: fit-content;
+    font-family: $fontReg;
+
+
+    &--error {
+        background-color: #DB39001F;
+        color: #B22E00;
+    }
+
+    &--success {
+        background-color: #57AE6026;
+        color: #397A3F;
+    }
+
+    &--progress {
+        background-color: #FFE74F66;
+        color: $textLink;
+    }
+
+    &--grey {
+        background-color: #EFF3F5;
+        color: $textLink;
+    }
+}
+
+.tag > div {
+    display: flex;
+    flex-direction: row;
+    height: 24px;
+    gap: 8px;
+    border-radius: 4px;
+    padding: 2px 8px 2px 8px;
+    align-items: center;
+    
+    img {
+        padding: 2px;
+    }
+}

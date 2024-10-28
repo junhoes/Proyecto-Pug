@@ -1,0 +1,73 @@
+.container_clientesPotenciales {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin: 24px 16px 24px 16px
+}
+
+.customer-card {
+    width: 100%;
+    min-width: 343px;
+    height: fit-content;
+    background-color: $white;
+    padding: 16px 24px 16px 24px;
+    border-radius: 12px;
+    font-family: $fontReg;
+    box-shadow: $shadow-card;
+
+    h3 {
+        font-size: 24px;
+        font-weight: 400;
+    }
+
+    .customer-card__deleteBtn {
+        float: right;
+        cursor: pointer;
+    }
+    
+    .customer-card__subtitle {
+        color: $primary50;
+    }
+
+}
+
+.customer-card__titleInfo p {
+    margin-top: 10px;
+}
+
+.customer-card__customerInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 14px 8px 14px 8px;
+    color: $primary;
+    font-family: $fontBold;
+    margin-top: 24px;
+}
+
+@media (min-width: $tablet) {
+    .container_clientesPotenciales {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .customer-card {
+        width: calc(50% - 12px);
+    }
+
+    .customer-card__customerInfo {
+        flex-direction: row;
+        padding: 14px 8px 14px 0px;
+    }
+}
+
+// @media (min-width: $tablet) and (max-width: $tabletMax) {
+//     .container_clientesPotenciales {
+//         justify-content: center;
+//     }
+
+//     .customer-card {
+//         width: 100%;
+//     }
+
+// }

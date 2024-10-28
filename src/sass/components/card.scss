@@ -1,0 +1,25 @@
+.contenedor {
+    width: 410px;
+    min-height: 612px;
+    height: auto;
+    padding: 24px;
+    border-radius: 8px;
+    justify-content: space-between;
+    font-family: $fontReg;
+    position: relative;
+    box-shadow: $shadow-card;
+}
+
+.contenedor__h3{
+    font-size: 24px;
+}
+
+.bloqueText {
+    margin-top: $spacing-3xl;
+}
+
+.btn__secondary {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+}

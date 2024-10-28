@@ -1,0 +1,43 @@
+.bloqueInput{
+    position: relative;
+    text-align: left;
+}
+
+.bloque__checkbox {
+    -webkit-appearance: none;
+    background-color: $white;
+    border: 2px solid #CED4DA;
+    width: 18px;
+    height: 18px;
+    border-radius: 6px;
+    position: relative;
+    color: #6C757D;
+    display:inline-block;
+    vertical-align:middle;
+
+    &:checked {
+        border: 2px solid #4B98D9;
+    }
+
+    &:checked + label{
+        color: #4B98D9;
+    }
+
+    &:checked::after {
+        content: '\2714';
+        font-size: 12px;
+        position: absolute;
+        top: 1px;
+        left: 2px;
+        color: #4B98D9;
+    }
+}
+
+.bloque__label {
+    color: #6C757D;
+    font-family: $fontReg;
+    font-size: 14px;
+    position: absolute;
+    padding-left: 10px;
+    top: 3px;    
+}

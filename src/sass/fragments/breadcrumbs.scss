@@ -1,0 +1,27 @@
+/* Style the list */
+.breadcrumbs { 
+    .breadcrumbs__list {
+        list-style: none;
+        
+        .crumb {
+            display: inline;
+        }
+
+        a {
+            color: $primary;
+        }
+
+        span {
+            color: #6B8893;
+        }
+
+        a:hover {
+            color: $primary75;
+        }
+    }
+}
+.breadcrumbs li+li:before { //añadir la barra entre dos elementos
+    padding: 8px;
+    color: #6B8893;
+    content: "/\00a0";
+}

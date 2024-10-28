@@ -1,0 +1,64 @@
+include ../components/opcion_desplegable
+
+.header__container
+    .container__logo
+        a(href="") 
+            img(src="../../images/Logo_TotalEnergies.png", alt="logo secura insurance")
+    .container__links 
+        .container__links--nav
+            +opcion_menu("", "Inicio", true, "../home.html")
+            +opcion_menu("", "Próximas renovaciones", false, "../renovaciones.html")
+            hr
+        .container__links--idiomas.container__idioma 
+            button.container__button.container__button--idioma(onclick='apareceDropdown("dropdown_container--idiomas--links")')
+                img.icon--main(src="../../images/globe.png", alt="icono_idiomas")
+                p(href="") Español
+                img.icon--dropDown(src="../../images/arrow-dropdown.png", alt="")
+                .dropdown_container--idiomas--links 
+                    a(href="#")  
+                        .idioma.eng English 
+                    a(href="#")  
+                        .idioma.cat Catalan
+                    a(href="#")  
+                        .idioma.gal Gallego
+                    a(href="#")  
+                        .idioma.eus Euskera  
+    .container__desplegables
+            .container__miPerfil
+                button.container__button.container__button--perfil(onclick='apareceSidebar("dropdown_container--perfil")')
+                    img.icon--main(src="../../images/user.png", alt="icono_perfil")
+                    p Mi perfil
+                    img.icon--dropDown(src="../../images/arrow-dropdown.png", alt="")
+                .dropdown_container--perfil 
+                    .miPerfil 
+                        p Mi Perfil 
+                        p En este espacio puedes acceder, modificar, gestionar y consultar todo lo relacionado con tus servicios de energía. Fácil y rápido. 
+                    .dropdown__buttons 
+                        +opcion_menu("../../images/user.png", "Mis datos personales", true, "#")
+                        +opcion_menu("../../images/lock.png", "Mi contraseña", false, "#")
+                        +opcion_menu("../../images/phone.png", "Contacto", false, "#")
+                        +opcion_menu("../../images/power-off.png", "Cerrar sesión", false, "#")
+            .container__desplegable--idioma.container__idioma 
+                button.container__button.container__button--idioma(onclick='apareceDropdown("dropdown_container--idiomas")')
+                    img.icon--main(src="../../images/globe.png", alt="icono_idiomas")
+                    p(href="") Español
+                    img.icon--dropDown(src="../../images/arrow-dropdown.png", alt="")
+                .dropdown_container--idiomas.dropdown_container--idiomas--desplegables 
+                    a(href="#")
+                        .idioma.esp Español 
+                    hr
+                    a(href="#")  
+                        .idioma.eng English 
+                    hr
+                    a(href="#")  
+                        .idioma.cat Catalan
+                    hr
+                    a(href="#")  
+                        .idioma.gal Gallego
+                    hr
+                    a(href="#")  
+                        .idioma.eus Euskera  
+            .container__burger            
+                button.iconos__boton--burger(onclick='apareceSidebar("container__links"); cambiarIcono()') 
+                     img.icono_burger(src="../../images/burger_menu.png" alt="icono_burger")
+                               

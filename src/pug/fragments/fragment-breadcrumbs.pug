@@ -1,0 +1,13 @@
+mixin fragment-breadcrumbs(content)
+    - var crumbs = content.crumbs || false;
+    .breadcrumbs
+        ul.breadcrumbs__list
+            each crumb, index in crumbs
+                    - var isLast = index === crumbs.length - 1
+                    if !isLast
+                        li.crumb
+                            a(href=crumb.url) 
+                                !=crumb.text
+                    else
+                        li.crumb.crumb--current
+                            span!=crumb.text

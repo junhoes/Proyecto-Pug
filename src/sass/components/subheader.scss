@@ -1,0 +1,30 @@
+.subheader{
+    width: 100%;
+    height: fit-content;
+    background-color: $white;
+    padding: 24px 16px 24px 16px;
+    border-bottom: 1px solid $hr;
+    &--info {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        hr{
+            font-weight: 400;
+        }
+        @media (min-width: $tablet){
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 44px;
+        }
+    }
+    @media (min-width: $tablet) {
+        padding: 32px 88px 32px 88px;
+    }
+}
+
+.breadcrumbs {
+    display: none; 
+    @media (min-width: $tablet) {
+        display: block;
+    }
+}

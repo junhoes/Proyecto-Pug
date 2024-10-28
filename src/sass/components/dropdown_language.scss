@@ -1,0 +1,53 @@
+.dropdown_container--idiomas {
+    width: 131px;
+    height: 195px;
+    text-align: center;
+    font-family: $fontReg;
+    color: $textLink;
+    border-radius: 12px;
+    box-shadow: $shadow-card;
+
+    a {
+        text-decoration: none;
+        font-family: $fontReg;
+ 
+        &:hover {
+            text-decoration: none;
+        }
+
+        &:active {
+            color: $textLink;
+        }
+
+        &:visited {
+            color: $textLink;
+        }
+
+        &:link {
+            color: $textLink;
+        }
+
+        .idioma {
+            padding: 10px 24px 10px 24px;
+           
+            &:hover {
+                background-color: #E6E7E8;
+            }
+        }
+    }
+    
+    hr{
+        margin: 0;
+        border: 1px solid $hr;
+    }
+}
+
+.dropdown_container--idiomas a:first-child div{
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.dropdown_container--idiomas a:last-child div{
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}

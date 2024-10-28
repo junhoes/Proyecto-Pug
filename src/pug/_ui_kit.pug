@@ -1,0 +1,35 @@
+extends layouts/layout-home
+
+block vars
+    - var pageTitle = "Homepage";
+
+block header
+    title Homepage
+
+block content
+    include components/button
+    include components/input_text
+    include components/checkbox
+    include components/card
+    include components/opcion_desplegable
+    include components/dropdown_language
+    include fragments/tag
+
+    +opcion_menu("../../images/user.png", "Mis datos personales")
+
+    +button('', 'Button')
+    +button('__secondary', 'Button')
+    br
+    br
+    +input_text('Correo', 'Content')
+    br
+    br
+    +input_checkbox
+    +input_checkbox('Open')
+    
+    +contenido_card('Contacto')
+
+    +tag("error")
+    +tag("success")
+    +tag("progress")
+    

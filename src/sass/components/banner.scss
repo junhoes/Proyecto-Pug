@@ -1,0 +1,45 @@
+.banner_container {
+    width: 100%;
+    height: 500px;
+    text-align: center;
+    color: $white;
+
+    img {
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        transform: scaleX(-1);
+        filter: brightness(50%);
+    }
+
+    .banner_container--text {
+        height: 500px;
+        align-content: center;
+        padding: 40px;
+    }
+    h1 {
+        font-family: $fontBold;
+        font-size: 40px;
+    }
+
+    h4 {
+        margin-top: 40px;
+        font-family: $fontReg;
+        font-size: 24px;
+    }
+}
+
+@media (min-width: $tablet) {
+    .banner_container--text {
+        padding: 80px;
+    }
+
+    h1 {
+        width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 64px!important;
+    }
+}

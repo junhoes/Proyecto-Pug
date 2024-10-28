@@ -1,0 +1,22 @@
+include ../fragments/fragment-breadcrumbs
+include ../fragments/tag
+mixin subheader(contents)
+    .subheader
+        each content in contents
+            - var title = content.title;
+            - var polizas = content.polizas;
+                +fragment-breadcrumbs({
+                    crumbs: [
+                        {
+                            text: "Pólizas",
+                            url: "home.html"
+                        }, 
+                        {
+                            text: "Próximas renovaciones",
+                            url: "renovaciones.pug"
+                        }
+                    ]
+                })
+                .subheader--info
+                    h3!= title 
+                    +tag("", "../images/archivo.png", polizas + " Pólizas")

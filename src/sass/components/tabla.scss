@@ -1,0 +1,62 @@
+.table-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 24px 16px 24px 16px;
+    min-width: 343px;
+    height: fit-content;
+    background-color: $white;
+    padding: 16px 24px 16px 24px;
+    border-radius: 12px;
+    font-family: $fontReg;
+    box-shadow: $shadow-card;
+}
+
+.table-card__title {
+    color: $textLink;
+    margin-bottom: 4px
+}
+
+.table-card__data {
+    strong {
+        font-weight: 700;
+    }
+}
+
+.table-header {
+    display: none;
+}
+
+
+
+@media (min-width: $tablet) {
+
+    .table-card {
+        flex-direction: row;   
+        justify-content: space-around;
+        padding: 24px 16px 24px 16px;
+    }
+
+    .table-card__title {
+        display: none;
+    }
+
+    .table-header {
+        font-family: $fontReg;
+        display: flex;
+        flex-direction: row;
+        justify-content:space-around;
+        padding: 24px 16px 24px 16px;
+        margin: 24px 16px 7px 16px;
+        border-bottom: 1px solid $hr;
+    }
+
+    .table-header p {
+        width: 180px;
+
+    }
+
+    .table-card__info {
+        width: 180px;
+    }
+}
