@@ -2,14 +2,14 @@ mixin selector(contents)
     each content in contents
         - var selName = content.name
         - var labelText = content.labelText
+        - var placeholder = content.placeholder
         - var options = content.options
-            .select--text(class!= selName)!= labelText
-            .select
-                each option in options
-                    .select--option
-
-            //- .custom-select
-            //-     label(for=selName)!= labelText
-            //-     select(name!= selName id!= selName)
-            //-         each option in options
-            //-             option(value!= option[0])!= option[1]
+            .selector(id!= selName)
+                span.select_default!= labelText 
+                .selector_box(onclick="apareceDropdown('" + selName + "')")!=placeholder
+                    img(src="../images/dropdown.png", alt="dropdown icon")
+                    .selector--dropdown(class!=selName)
+                        each option in options
+                            .selector_li(class!= option[0])!= option[1]
+                            hr
+            

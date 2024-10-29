@@ -10712,8 +10712,10 @@ var dropdown_menu_idioma = document.getElementsByClassName("dropdown_container--
 var dropdown_menu_idioma_mobile = document.getElementsByClassName("dropdown_container--idiomas--links")[0] || false;
 
 function apareceDropdown(clase) {
-    var dropdown_menu = document.getElementsByClassName(clase);
-    dropdown_menu[0].classList.toggle("show");
+    if(clase){
+        var dropdown_menu = document.getElementsByClassName(clase);
+        dropdown_menu[0].classList.toggle("show");
+    }
 }
 
 window.onclick = function (event) {

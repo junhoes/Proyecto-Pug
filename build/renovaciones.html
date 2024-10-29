@@ -114,12 +114,15 @@
             <div class="opcionesTabla">
               <div class="opcionesTabla--ordenar">
                 <div class="opcionesTabla--selector">
-                        <div class="custom-select">
-                          <label for="mayormenor">Ordenar por: </label>
-                          <select name="mayormenor" id="mayormenor">
-                            <option value="mayorImporte">Mayor importe</option>
-                            <option value="menorImporte">Menor importe</option>
-                          </select>
+                        <div class="selector" id="mayormenor"><span class="select_default">Ordenar por: </span>
+                          <div class="selector_box" onclick="apareceDropdown('mayormenor')">Mayor importe<img src="../images/dropdown.png" alt="dropdown icon">
+                            <div class="selector--dropdown mayormenor">
+                              <div class="selector_li mayorImporte">Mayor importe</div>
+                              <hr>
+                              <div class="selector_li menorImporte">Menor importe</div>
+                              <hr>
+                            </div>
+                          </div>
                         </div>
                 </div>
                 <p class="numFacturas">550 facturas</p>
@@ -137,12 +140,15 @@
               </div>
               <div class="menuFiltros--opciones">
                 <div class="selector--poliza">
-                        <div class="custom-select">
-                          <label for="numPoliza">No. de póliza</label>
-                          <select name="numPoliza" id="numPoliza">
-                            <option value="totalPolizas">Todas las pólizas</option>
-                            <option value="num1">75846843</option>
-                          </select>
+                        <div class="selector" id="numPoliza"><span class="select_default">No. de póliza</span>
+                          <div class="selector_box" onclick="apareceDropdown('numPoliza')">Todas las pólizas<img src="../images/dropdown.png" alt="dropdown icon">
+                            <div class="selector--dropdown numPoliza">
+                              <div class="selector_li totalPolizas">Todas las pólizas</div>
+                              <hr>
+                              <div class="selector_li num1">75846843</div>
+                              <hr>
+                            </div>
+                          </div>
                         </div>
                 </div>
                       <div class="bloqueText">
@@ -154,14 +160,19 @@
                         <input class="bloque__input" type="text" id="importeRiesgo" name="importeRiesgo" placeholder="Introduzca importe">
                       </div>
                 <div class="selector--estado"> 
-                        <div class="custom-select">
-                          <label for="estadoRiesgo">Estado</label>
-                          <select name="estadoRiesgo" id="estadoRiesgo">
-                            <option value="totalEstados">Todos los estados</option>
-                            <option value="pendiente">Pendiente</option>
-                            <option value="pagado">Pagada</option>
-                            <option value="vencido">Vencido</option>
-                          </select>
+                        <div class="selector" id="estadoRiesgo"><span class="select_default">Estado</span>
+                          <div class="selector_box" onclick="apareceDropdown('estadoRiesgo')">Todos los estados<img src="../images/dropdown.png" alt="dropdown icon">
+                            <div class="selector--dropdown estadoRiesgo">
+                              <div class="selector_li totalEstados">Todos los estados</div>
+                              <hr>
+                              <div class="selector_li pendiente">Pendiente</div>
+                              <hr>
+                              <div class="selector_li pagado">Pagada</div>
+                              <hr>
+                              <div class="selector_li vencido">Vencido</div>
+                              <hr>
+                            </div>
+                          </div>
                         </div>
                 </div>
               </div>

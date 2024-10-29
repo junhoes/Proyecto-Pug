@@ -23,7 +23,8 @@
     "gulp-uglify-es": "^1.0.1",
     "jade": "~1.11.0",
     "npm": "^6.14.18",
-    "streamqueue": "^1.1.1"
+    "streamqueue": "^1.1.1",
+    "vanilla-calendar-pro": "^2.9.10"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
