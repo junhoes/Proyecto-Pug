@@ -1,0 +1,15 @@
+//- link(rel='stylesheet', href='node_modules/vanilla-calendar/dist/vanilla-calendar.min.css')
+mixin date_input(labelText)
+    //- input(id="calendar-input" type="textp" placeholder="Choose a date" readonly)
+    //- .calendar-input-div 
+    //- .calendar 
+    //- script(src="../js/custom/main.js")
+    //- script(src="calendar.ts")
+
+    .container_calendar
+        .date_label!= labelText
+        .calendar 
+            input.date_input(type="date" placeholder="Fecha inicio")
+            span al
+            input.date_input(type="date" placeholder="Fecha fin")
+

@@ -1,4 +1,14 @@
-mixin input_checkbox(text)
-    .bloqueInput
-        input.bloque__checkbox(type="checkbox")
-        label.bloque__label= text 
+mixin input_checkbox(text, checkType)
+    if(checkType == 'checkbox')
+        label.container
+            .container--checkbox
+                input(type="checkbox")
+                span.checkmark
+            p!=text
+
+    else if (checkType == 'radio')
+        label.container
+            .container--radio
+                input(type="radio")
+                span.checkmark
+            p!=text

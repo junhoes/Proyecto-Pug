@@ -10702,6 +10702,18 @@ if ( typeof noGlobal === "undefined" ) {
 
 return jQuery;
 } );
+// import VanillaCalendar from 'vanilla-calendar-pro';
+// import 'vanilla-calendar-pro/build/vanilla-calendar.min.css';
+// // Only layout calendar
+// import 'vanilla-calendar-pro/build/vanilla-calendar.layout.min.css';
+
+// // Themes
+// import 'vanilla-calendar-pro/build/themes/light.min.css';
+// import 'vanilla-calendar-pro/build/themes/dark.min.css';
+
+// const calendar = new VanillaCalendar('#calendar');
+// calendar.init();
+
 var sidebarAbierto = null;
 const img_burger = '../../images/burger_menu.png';
 const img_close = '../../images/close.png';

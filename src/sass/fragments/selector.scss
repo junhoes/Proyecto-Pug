@@ -1,5 +1,4 @@
 .selector {
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   span{
@@ -15,6 +14,7 @@
     background-color: $white;
     position: relative;
     color: $textLink;
+    cursor: pointer;
     img{
       float: right;
       padding-left: 10px;

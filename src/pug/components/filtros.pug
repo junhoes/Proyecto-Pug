@@ -1,5 +1,7 @@
 include ../fragments/selector
 include ../components/input_text
+include ../fragments/date_input
+include ../components/checkbox
 mixin filtros(facturas)
     .opcionesTabla
         .opcionesTabla--ordenar
@@ -40,7 +42,7 @@ mixin filtros(facturas)
                 ])
             +input_text('Nombre del riesgo', 'Introduce el nombre del riesgo', 'nameRiesgo')
 
-            //- fecha
+            +date_input('Fecha de validez')
 
             +input_text('Importe', 'Introduzca importe', 'importeRiesgo')
 
@@ -59,5 +61,10 @@ mixin filtros(facturas)
                     }
                 ])
 
-            //-checkboxes
+            .container_checkboxAnio
+                p.bloque__label Año de factura
+                +input_checkbox('2024', 'checkbox')
+                +input_checkbox('2023', 'checkbox')
+                +input_checkbox('2024', 'radio')
+                +input_checkbox('2024', 'radio')
 

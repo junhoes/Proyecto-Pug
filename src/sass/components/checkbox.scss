@@ -1,43 +1,83 @@
-.bloqueInput{
+.container {
+    display: block;
+    // width: fit-content;
     position: relative;
-    text-align: left;
-}
+    padding-left: 35px; //dejar espacio entre checkbox y texto
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 
-.bloque__checkbox {
-    -webkit-appearance: none;
-    background-color: $white;
-    border: 2px solid #CED4DA;
-    width: 18px;
-    height: 18px;
-    border-radius: 6px;
-    position: relative;
-    color: #6C757D;
-    display:inline-block;
-    vertical-align:middle;
-
-    &:checked {
-        border: 2px solid #4B98D9;
-    }
-
-    &:checked + label{
-        color: #4B98D9;
-    }
-
-    &:checked::after {
-        content: '\2714';
-        font-size: 12px;
+    input {
         position: absolute;
-        top: 1px;
-        left: 2px;
-        color: #4B98D9;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .checkmark {
+        //posición del checkmark
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: #eee;
+        border-radius: 4px;
+    }
+
+    &--checkbox {
+        input {
+            height: 0;
+            width: 0;
+        }
+
+        .checkmark:after {
+            //tick de dentro del checkbox
+            left: 10px;
+            top: 7px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    }
+
+    &--radio {
+        .checkmark {
+            border-radius: 50%;
+        }
+
+        .checkmark:after {
+            top: 9px;
+            left: 8.5px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: white;
+        }
     }
 }
 
-.bloque__label {
-    color: #6C757D;
-    font-family: $fontReg;
-    font-size: 14px;
+.container:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+.container input:checked~.checkmark {
+    background-color: $primary;
+}
+
+.checkmark:after {
+    content: "";
     position: absolute;
-    padding-left: 10px;
-    top: 3px;    
+    display: none;
+}
+
+.container input:checked~.checkmark:after {
+    display: block;
 }

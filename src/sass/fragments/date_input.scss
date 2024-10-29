@@ -1,0 +1,12 @@
+.container_calendar {
+    .date_label {
+        font-weight: 700;
+        color: $textLink;
+        margin-bottom: 8px;
+    }
+    .calendar {
+        input {
+            border: 1px solid #A7B8BF;
+        }
+    }
+}
