@@ -1,0 +1,34 @@
+.chip {
+    overflow-x: hidden; //como puedo hacer que desaparezcan
+    background-color: $primary;
+    border-radius: 99px;
+    height: 33px;
+    min-width: fit-content;
+    padding: 4px 16px;
+    display: flex;
+    align-items: center;
+
+    &--texto {
+        color: $white!important;
+    }
+    &--varios {
+        color: $primary!important;
+        background-color: $white;
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        border-radius: 50%;
+        margin-left: 6px;
+        padding: 3px 3px 2px 0px;
+
+    }
+    &--cerrar {
+        padding-left: 6px ;
+    }
+    // &--fondo {
+    //     background-color: $white;
+    //     text-align: center;
+    //     border-radius: 50%;
+    //     padding-right: 8px;
+    // }
+}

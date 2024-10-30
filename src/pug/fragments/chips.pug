@@ -1,0 +1,7 @@
+mixin chips(texto, multiple)
+    .chip 
+        p.chip--texto!= texto 
+        if(multiple)
+            .chip--fondo
+            span.chip--varios!= '+' + multiple
+        img.chip--cerrar(src="../images/close_white.png" alt="")

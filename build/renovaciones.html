@@ -112,6 +112,28 @@
               </div>
             </div>
             <div class="opcionesTabla">
+              <div class="opcionesTabla--filtros">
+                <div class="opcionesTabla--abrirFiltros">
+                  <button class="abrirFiltros" onclick="apareceFiltros(&quot;menuFiltros&quot;)"><img src="../images/filter.png" alt="filter icon">
+                    <p>Filtros</p>
+                  </button>
+                </div>
+                <div class="opcionesTabla--chips">
+                        <div class="chip"> 
+                          <p class="chip--texto">Hyundai Ioniq</p><img class="chip--cerrar" src="../images/close_white.png" alt="">
+                        </div>
+                        <div class="chip"> 
+                          <p class="chip--texto">2022</p><img class="chip--cerrar" src="../images/close_white.png" alt="">
+                        </div>
+                        <div class="chip"> 
+                          <p class="chip--texto">75846843</p>
+                          <div class="chip--fondo"></div><span class="chip--varios">+2</span><img class="chip--cerrar" src="../images/close_white.png" alt="">
+                        </div>
+                        <div class="chip"> 
+                          <p class="chip--texto">Madrid</p><img class="chip--cerrar" src="../images/close_white.png" alt="">
+                        </div>
+                </div>
+              </div>
               <div class="opcionesTabla--ordenar">
                 <div class="opcionesTabla--selector">
                         <div class="selector" id="mayormenor"><span class="select_default">Ordenar por: </span>
@@ -125,12 +147,11 @@
                           </div>
                         </div>
                 </div>
-                <p class="numFacturas">550 facturas</p>
-              </div>
-              <div class="opcionesTabla--abrirFiltros">
-                <button class="abrirFiltros" onclick="apareceFiltros(&quot;menuFiltros&quot;)"><img src="../images/filter.png" alt="filter icon">
-                  <p>Filtros</p>
-                </button>
+                <div class="opcionesTabla--facturas">
+                  <p class="numFacturas">550 facturas</p>
+                  <p class="aplicados">4 filtros aplicados </p>
+                  <button class="borrarFiltros">Borrar filtros</button>
+                </div>
               </div>
             </div>
             <div class="menuFiltros"> 
@@ -138,78 +159,89 @@
                 <p>Filtros</p>
                 <button class="cerrarFiltros" onclick="apareceFiltros(&quot;menuFiltros&quot;)"><img src="../images/close.png" alt="close icon"></button>
               </div>
-              <div class="menuFiltros--opciones">
-                <div class="selector--poliza">
-                        <div class="selector" id="numPoliza"><span class="select_default">No. de póliza</span>
-                          <div class="selector_box" onclick="apareceDropdown('numPoliza')">Todas las pólizas<img src="../images/dropdown.png" alt="dropdown icon">
-                            <div class="selector--dropdown numPoliza">
-                              <div class="selector_li totalPolizas">Todas las pólizas</div>
-                              <hr>
-                              <div class="selector_li num1">75846843</div>
-                              <hr>
+              <form class="container_formulario" action=""> 
+                <div class="menuFiltros--opciones">
+                  <div class="selector--poliza">
+                          <div class="selector" id="numPoliza"><span class="select_default">No. de póliza</span>
+                            <div class="selector_box" onclick="apareceDropdown('numPoliza')">Todas las pólizas<img src="../images/dropdown.png" alt="dropdown icon">
+                              <div class="selector--dropdown numPoliza">
+                                <div class="selector_li totalPolizas">Todas las pólizas</div>
+                                <hr>
+                                <div class="selector_li num1">75846843</div>
+                                <hr>
+                              </div>
                             </div>
                           </div>
+                  </div>
+                        <div class="bloqueText">
+                          <label class="bloque__label" for="nameRiesgo">Nombre del riesgo</label>
+                          <input class="bloque__input" type="text" id="nameRiesgo" name="nameRiesgo" placeholder="Introduce el nombre del riesgo">
                         </div>
-                </div>
-                      <div class="bloqueText">
-                        <label class="bloque__label" for="nameRiesgo">Nombre del riesgo</label>
-                        <input class="bloque__input" type="text" id="nameRiesgo" name="nameRiesgo" placeholder="Introduce el nombre del riesgo">
-                      </div>
-                      <div class="container_calendar">
-                        <div class="date_label">Fecha de validez</div>
-                        <div class="calendar"> 
-                          <input class="date_input" type="date" placeholder="Fecha inicio"><span>al</span>
-                          <input class="date_input" type="date" placeholder="Fecha fin">
+                        <div class="container_calendar">
+                          <div class="date_label">Fecha de validez</div>
+                          <div class="calendar"> 
+                            <input class="date_input" type="date" placeholder="Fecha inicio"><span>al</span>
+                            <input class="date_input" type="date" placeholder="Fecha fin">
+                          </div>
                         </div>
-                      </div>
-                      <div class="bloqueText">
-                        <label class="bloque__label" for="importeRiesgo">Importe</label>
-                        <input class="bloque__input" type="text" id="importeRiesgo" name="importeRiesgo" placeholder="Introduzca importe">
-                      </div>
-                <div class="selector--estado"> 
-                        <div class="selector" id="estadoRiesgo"><span class="select_default">Estado</span>
-                          <div class="selector_box" onclick="apareceDropdown('estadoRiesgo')">Todos los estados<img src="../images/dropdown.png" alt="dropdown icon">
-                            <div class="selector--dropdown estadoRiesgo">
-                              <div class="selector_li totalEstados">Todos los estados</div>
-                              <hr>
-                              <div class="selector_li pendiente">Pendiente</div>
-                              <hr>
-                              <div class="selector_li pagado">Pagada</div>
-                              <hr>
-                              <div class="selector_li vencido">Vencido</div>
-                              <hr>
+                        <div class="bloqueText">
+                          <label class="bloque__label" for="importeRiesgo">Importe</label>
+                          <input class="bloque__input" type="text" id="importeRiesgo" name="importeRiesgo" placeholder="Introduzca importe">
+                        </div>
+                  <div class="selector--estado"> 
+                          <div class="selector" id="estadoRiesgo"><span class="select_default">Estado</span>
+                            <div class="selector_box" onclick="apareceDropdown('estadoRiesgo')">Todos los estados<img src="../images/dropdown.png" alt="dropdown icon">
+                              <div class="selector--dropdown estadoRiesgo">
+                                <div class="selector_li totalEstados">Todos los estados</div>
+                                <hr>
+                                <div class="selector_li pendiente">Pendiente</div>
+                                <hr>
+                                <div class="selector_li pagado">Pagada</div>
+                                <hr>
+                                <div class="selector_li vencido">Vencido</div>
+                                <hr>
+                              </div>
                             </div>
                           </div>
-                        </div>
+                  </div>
+                  <div class="container_checkboxAnio">
+                    <p class="bloque__label">Año de factura</p>
+                          <label class="container">
+                            <div class="container--checkbox">
+                              <input type="checkbox"><span class="checkmark"></span>
+                            </div>
+                            <p>2024</p>
+                          </label>
+                          <label class="container">
+                            <div class="container--checkbox">
+                              <input type="checkbox"><span class="checkmark"></span>
+                            </div>
+                            <p>2023</p>
+                          </label>
+                          <label class="container">
+                            <div class="container--checkbox">
+                              <input type="checkbox"><span class="checkmark"></span>
+                            </div>
+                            <p>2022</p>
+                          </label>
+                  </div>
+                  <div class="container_checkboxComunidad">
+                    <p class="bloque__label">Comunidad Autónoma</p>
+                          <label class="container">
+                            <div class="container--radio">
+                              <input type="radio" name="radio"><span class="checkmark"></span>
+                            </div>
+                            <p>Madrid</p>
+                          </label>
+                          <label class="container">
+                            <div class="container--radio">
+                              <input type="radio" name="radio"><span class="checkmark"></span>
+                            </div>
+                            <p>Barcelona</p>
+                          </label>
+                  </div>
                 </div>
-                <div class="container_checkboxAnio">
-                  <p class="bloque__label">Año de factura</p>
-                        <label class="container">
-                          <div class="container--checkbox">
-                            <input type="checkbox"><span class="checkmark"></span>
-                          </div>
-                          <p>2024</p>
-                        </label>
-                        <label class="container">
-                          <div class="container--checkbox">
-                            <input type="checkbox"><span class="checkmark"></span>
-                          </div>
-                          <p>2023</p>
-                        </label>
-                        <label class="container">
-                          <div class="container--radio">
-                            <input type="radio"><span class="checkmark"></span>
-                          </div>
-                          <p>2024</p>
-                        </label>
-                        <label class="container">
-                          <div class="container--radio">
-                            <input type="radio"><span class="checkmark"></span>
-                          </div>
-                          <p>2024</p>
-                        </label>
-                </div>
-              </div>
+              </form>
             </div>
             <div class="table-header"> 
               <p class="table__title">Nº de póliza</p>

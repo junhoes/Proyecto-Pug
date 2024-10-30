@@ -1,9 +1,20 @@
 include ../fragments/selector
 include ../components/input_text
 include ../fragments/date_input
+include ../fragments/chips
 include ../components/checkbox
 mixin filtros(facturas)
     .opcionesTabla
+        .opcionesTabla--filtros
+            .opcionesTabla--abrirFiltros
+                button.abrirFiltros(onclick='apareceFiltros("menuFiltros")')
+                    img(src="../images/filter.png", alt="filter icon")
+                    p Filtros
+            .opcionesTabla--chips
+                +chips('Hyundai Ioniq')
+                +chips('2022')
+                +chips('75846843', '2')
+                +chips('Madrid')
         .opcionesTabla--ordenar
             .opcionesTabla--selector
                 +selector([
@@ -17,54 +28,58 @@ mixin filtros(facturas)
                     ]
                     }   
                 ])
-            p.numFacturas #{facturas} facturas
-        .opcionesTabla--abrirFiltros
-            button.abrirFiltros(onclick='apareceFiltros("menuFiltros")')
-                img(src="../images/filter.png", alt="filter icon")
-                p Filtros
+            .opcionesTabla--facturas
+                p.numFacturas #{facturas} facturas
+                p.aplicados 4 filtros aplicados 
+                button.borrarFiltros Borrar filtros
+
     .menuFiltros 
         .menuFiltros--header   
             p Filtros
             button.cerrarFiltros(onclick='apareceFiltros("menuFiltros")')
                 img(src="../images/close.png", alt="close icon")
-        .menuFiltros--opciones
-            .selector--poliza
-                +selector([
-                    {
-                        name: 'numPoliza',
-                        labelText: 'No. de póliza',
-                        placeholder: 'Todas las pólizas',
-                        options: [
-                            ['totalPolizas', 'Todas las pólizas'],
-                            ['num1', '75846843']
-                        ]
-                    }
-                ])
-            +input_text('Nombre del riesgo', 'Introduce el nombre del riesgo', 'nameRiesgo')
+        form.container_formulario(action="") 
+            .menuFiltros--opciones
+                .selector--poliza
+                    +selector([
+                        {
+                            name: 'numPoliza',
+                            labelText: 'No. de póliza',
+                            placeholder: 'Todas las pólizas',
+                            options: [
+                                ['totalPolizas', 'Todas las pólizas'],
+                                ['num1', '75846843']
+                            ]
+                        }
+                    ])
+                +input_text('Nombre del riesgo', 'Introduce el nombre del riesgo', 'nameRiesgo')
 
-            +date_input('Fecha de validez')
+                +date_input('Fecha de validez')
 
-            +input_text('Importe', 'Introduzca importe', 'importeRiesgo')
+                +input_text('Importe', 'Introduzca importe', 'importeRiesgo')
 
-            .selector--estado 
-                +selector([
-                    {
-                        name: 'estadoRiesgo',
-                        labelText: 'Estado',
-                        placeholder: 'Todos los estados',
-                        options: [
-                            ['totalEstados', 'Todos los estados'],
-                            ['pendiente', 'Pendiente'],
-                            ['pagado', 'Pagada'],
-                            ['vencido', 'Vencido']
-                        ]
-                    }
-                ])
+                .selector--estado 
+                    +selector([
+                        {
+                            name: 'estadoRiesgo',
+                            labelText: 'Estado',
+                            placeholder: 'Todos los estados',
+                            options: [
+                                ['totalEstados', 'Todos los estados'],
+                                ['pendiente', 'Pendiente'],
+                                ['pagado', 'Pagada'],
+                                ['vencido', 'Vencido']
+                            ]
+                        }
+                    ])
 
-            .container_checkboxAnio
-                p.bloque__label Año de factura
-                +input_checkbox('2024', 'checkbox')
-                +input_checkbox('2023', 'checkbox')
-                +input_checkbox('2024', 'radio')
-                +input_checkbox('2024', 'radio')
+                .container_checkboxAnio
+                    p.bloque__label Año de factura
+                    +input_checkbox('2024', 'checkbox')
+                    +input_checkbox('2023', 'checkbox')
+                    +input_checkbox('2022', 'checkbox')
+                .container_checkboxComunidad
+                    p.bloque__label Comunidad Autónoma
+                    +input_checkbox('Madrid', 'radio')
+                    +input_checkbox('Barcelona', 'radio')
 

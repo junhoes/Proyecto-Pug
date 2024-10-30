@@ -9,6 +9,6 @@ mixin input_checkbox(text, checkType)
     else if (checkType == 'radio')
         label.container
             .container--radio
-                input(type="radio")
+                input(type="radio" name="radio")
                 span.checkmark
             p!=text

@@ -1,6 +1,7 @@
 .container {
     display: block;
-    // width: fit-content;
+    float: left;
+    width: 50%;
     position: relative;
     padding-left: 35px; //dejar espacio entre checkbox y texto
     margin-bottom: 12px;
@@ -15,6 +16,10 @@
         position: absolute;
         opacity: 0;
         cursor: pointer;
+    }
+    
+    p {
+        font-weight: 400;
     }
 
     .checkmark {
