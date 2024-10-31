@@ -1,0 +1,26 @@
+- const icons = ["../images/paginador/skip-left.png", "../images/paginador/arrow-left.png", "../images/paginador/arrow-right.png", "../images/paginador/skip-right.png"];
+include ../fragments/selector
+
+.paginador
+    //- filas por pagina
+    .paginador--filtros 
+        +selector([
+            {
+                name: 'filasPagina',
+                labelText: 'Filas por página ',
+                placeholder: '10',
+                options: [
+                    ['filas 10', '10'],
+                    ['filas 15', '15'],
+                    ['filas 20', '20'],
+                ]
+            }   
+        ])
+    //- pagina 1 de 1023
+    span.paginador--paginas Página 1 de 77
+    //- flechitas
+    if(icons)
+        .paginador--arrows 
+            each val, index in icons
+                button.paginador--arrow
+                    img(src= val , alt="arrow #{index}")

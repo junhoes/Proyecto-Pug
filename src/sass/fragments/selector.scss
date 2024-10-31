@@ -22,7 +22,7 @@
   }
   .selector_box div {width: 100%;} //para que el hijo (dropdown) tenga el mismo width
   &--dropdown{
-    max-height: 120px; //hacer scroll cuando hay más de 2/3 opciones aprox
+    max-height: 135px; //hacer scroll cuando hay más de 2/3 opciones aprox
     overflow-y: auto;
     box-sizing: border-box;
     display: none;

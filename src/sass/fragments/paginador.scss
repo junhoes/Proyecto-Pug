@@ -1,0 +1,40 @@
+.paginador {
+    display: none;
+    @media (min-width: $tablet){
+        margin: 20px 24px 80px 24px;
+        display: block;
+        display: flex; //ojito
+        align-items: center;
+        gap: 32px;
+        float: right;
+        &--arrows {
+            display: flex;
+            gap: 8px;
+            
+        }
+        &--arrow {
+            cursor: pointer;
+            padding: 12px;
+            border-radius: 8px;
+            background-color: $white;
+            box-shadow: $shadow-card;
+        }
+        #filasPagina {
+            flex-direction: row;
+            gap: 12px;
+            align-items: center;
+            span {
+                margin-bottom: 0px;
+            }
+            
+        }
+        span {
+            font-weight: 700;
+            color: $textLink;
+        }
+    }
+}
+
+.paginador > * {
+    float: left;
+}
