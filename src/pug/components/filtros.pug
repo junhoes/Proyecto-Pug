@@ -30,9 +30,8 @@ mixin filtros(facturas)
                 ])
             .opcionesTabla--facturas
                 p.numFacturas #{facturas} facturas
-                p.aplicados 4 filtros aplicados 
-                button.borrarFiltros Borrar filtros
-
+                p.aplicados 5 filtros aplicados 
+                button.borrarFiltros(onclick='eliminarChips()') Borrar filtros
     .menuFiltros 
         .menuFiltros--header   
             p Filtros

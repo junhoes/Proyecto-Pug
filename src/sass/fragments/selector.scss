@@ -1,7 +1,7 @@
 .selector {
   display: flex;
   flex-direction: column;
-  span{
+  .select_default{
     font-weight: 700;
     color: $textLink;
     margin-bottom: 8px;
@@ -21,6 +21,9 @@
     }
   }
   .selector_box div {width: 100%;} //para que el hijo (dropdown) tenga el mismo width
+  &--placeholder {
+    font-weight: 400px
+  }
   &--dropdown{
     max-height: 135px; //hacer scroll cuando hay más de 2/3 opciones aprox
     overflow-y: auto;

@@ -1,11 +1,21 @@
 .container_calendar {
+    .calendar__inputs {
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+        align-items: center;
+    }
+    .calendar{
+        position: relative;
+        img{
+            cursor: pointer;
+            position: absolute;
+            right: 12px;
+            top: 20px;
+        }
+    }
     .date_label {
         font-weight: 700;
         color: $textLink;
-    }
-    .calendar {
-        input {
-            border: 1px solid #A7B8BF;
-        }
     }
 }

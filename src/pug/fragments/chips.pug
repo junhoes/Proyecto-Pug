@@ -1,7 +1,9 @@
 mixin chips(texto, multiple)
-    .chip 
+    - var chipID = `${texto} chip`
+    .chip(id= chipID)
         p.chip--texto!= texto 
         if(multiple)
             .chip--fondo
             span.chip--varios!= '+' + multiple
-        img.chip--cerrar(src="../images/close_white.png" alt="")
+        button(onclick=`delete_CustomerCard('${chipID}')`)
+            img.chip--cerrar(src="../images/close_white.png" alt="")

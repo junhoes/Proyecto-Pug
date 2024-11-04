@@ -6,10 +6,11 @@ mixin selector(contents)
         - var options = content.options
             .selector(id!= selName)
                 span.select_default!= labelText 
-                .selector_box(onclick="apareceDropdown('" + selName + "')")!=placeholder
+                .selector_box(onclick="apareceDropdown('" + selName + "')")
+                    span.selector_box--placeholder!=placeholder
                     img(src="../images/dropdown.png", alt="dropdown icon")
                     .selector--dropdown(class!=selName)
                         each option in options
-                            .selector_li(class!= option[0])!= option[1]
+                            .selector_li(class=option[0], onclick="actualizarDropdown(this, '" + selName + "')")= option[1]
                             hr
             

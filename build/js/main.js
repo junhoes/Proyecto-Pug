@@ -10706,11 +10706,6 @@ return jQuery;
 // import 'vanilla-calendar-pro/build/vanilla-calendar.min.css';
 // // Only layout calendar
 // import 'vanilla-calendar-pro/build/vanilla-calendar.layout.min.css';
-
-// // Themes
-// import 'vanilla-calendar-pro/build/themes/light.min.css';
-// import 'vanilla-calendar-pro/build/themes/dark.min.css';
-
 // const calendar = new VanillaCalendar('#calendar');
 // calendar.init();
 
@@ -10813,6 +10808,23 @@ function apareceFiltros(sliderClass){
             slider.classList.add('show');
             slider.style.animation = 'slideInFiltros 0.5s forwards';
         }
+    }
+}
+
+function eliminarChips() {
+    var chips = document.getElementsByClassName('chip');
+    if (chips.length > 0) {
+        for (var i = chips.length - 1; i >= 0; i--) {
+            chips[i].remove();
+        }
+    }
+}
+
+function actualizarDropdown(selElement, idDropdown){
+    var dropdownContainer = document.getElementById(idDropdown);
+    if(dropdownContainer){
+        var placeholder = dropdownContainer.getElementsByClassName("selector_box--placeholder")[0];
+        placeholder.textContent = selElement.innerHTML;
     }
 }
 

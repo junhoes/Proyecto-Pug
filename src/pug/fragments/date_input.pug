@@ -1,15 +1,13 @@
-//- link(rel='stylesheet', href='node_modules/vanilla-calendar/dist/vanilla-calendar.min.css')
+include ../components/input_text
 mixin date_input(labelText)
-    //- input(id="calendar-input" type="textp" placeholder="Choose a date" readonly)
-    //- .calendar-input-div 
-    //- .calendar 
-    //- script(src="../js/custom/main.js")
-    //- script(src="calendar.ts")
-
     .container_calendar
         .date_label!= labelText
-        .calendar 
-            input.date_input(type="date" placeholder="Fecha inicio")
+        .calendar__inputs 
+            .calendar.calendar--start
+                +input_text('', 'Fecha inicio', 'calendar-start')
+                img.btn_calendar(src="../images/calendar.png", alt="icon calendar")
             span al
-            input.date_input(type="date" placeholder="Fecha fin")
-
+            .calendar.calendar--end
+                +input_text('', 'Fecha fin', 'calendar-end')
+                img.btn_calendar(src="../images/calendar.png", alt="icon calendar")
+            input(type="date")

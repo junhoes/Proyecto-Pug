@@ -119,29 +119,33 @@
                   </button>
                 </div>
                 <div class="opcionesTabla--chips">
-                        <div class="chip"> 
-                          <p class="chip--texto">Hyundai Ioniq</p><img class="chip--cerrar" src="../images/close_white.png" alt="">
+                        <div class="chip" id="Hyundai Ioniq chip">
+                          <p class="chip--texto">Hyundai Ioniq</p>
+                          <button onclick="delete_CustomerCard('Hyundai Ioniq chip')"><img class="chip--cerrar" src="../images/close_white.png" alt=""></button>
                         </div>
-                        <div class="chip"> 
-                          <p class="chip--texto">2022</p><img class="chip--cerrar" src="../images/close_white.png" alt="">
+                        <div class="chip" id="2022 chip">
+                          <p class="chip--texto">2022</p>
+                          <button onclick="delete_CustomerCard('2022 chip')"><img class="chip--cerrar" src="../images/close_white.png" alt=""></button>
                         </div>
-                        <div class="chip"> 
+                        <div class="chip" id="75846843 chip">
                           <p class="chip--texto">75846843</p>
-                          <div class="chip--fondo"></div><span class="chip--varios">+2</span><img class="chip--cerrar" src="../images/close_white.png" alt="">
+                          <div class="chip--fondo"></div><span class="chip--varios">+2</span>
+                          <button onclick="delete_CustomerCard('75846843 chip')"><img class="chip--cerrar" src="../images/close_white.png" alt=""></button>
                         </div>
-                        <div class="chip"> 
-                          <p class="chip--texto">Madrid</p><img class="chip--cerrar" src="../images/close_white.png" alt="">
+                        <div class="chip" id="Madrid chip">
+                          <p class="chip--texto">Madrid</p>
+                          <button onclick="delete_CustomerCard('Madrid chip')"><img class="chip--cerrar" src="../images/close_white.png" alt=""></button>
                         </div>
                 </div>
               </div>
               <div class="opcionesTabla--ordenar">
                 <div class="opcionesTabla--selector">
                         <div class="selector" id="mayormenor"><span class="select_default">Ordenar por: </span>
-                          <div class="selector_box" onclick="apareceDropdown('mayormenor')">Mayor importe<img src="../images/dropdown.png" alt="dropdown icon">
+                          <div class="selector_box" onclick="apareceDropdown('mayormenor')"><span class="selector_box--placeholder">Mayor importe</span><img src="../images/dropdown.png" alt="dropdown icon">
                             <div class="selector--dropdown mayormenor">
-                              <div class="selector_li mayorImporte">Mayor importe</div>
+                              <div class="selector_li mayorImporte" onclick="actualizarDropdown(this, 'mayormenor')">Mayor importe</div>
                               <hr>
-                              <div class="selector_li menorImporte">Menor importe</div>
+                              <div class="selector_li menorImporte" onclick="actualizarDropdown(this, 'mayormenor')">Menor importe</div>
                               <hr>
                             </div>
                           </div>
@@ -149,8 +153,8 @@
                 </div>
                 <div class="opcionesTabla--facturas">
                   <p class="numFacturas">550 facturas</p>
-                  <p class="aplicados">4 filtros aplicados </p>
-                  <button class="borrarFiltros">Borrar filtros</button>
+                  <p class="aplicados">5 filtros aplicados </p>
+                  <button class="borrarFiltros" onclick="eliminarChips()">Borrar filtros</button>
                 </div>
               </div>
             </div>
@@ -163,11 +167,11 @@
                 <div class="menuFiltros--opciones">
                   <div class="selector--poliza">
                           <div class="selector" id="numPoliza"><span class="select_default">No. de póliza</span>
-                            <div class="selector_box" onclick="apareceDropdown('numPoliza')">Todas las pólizas<img src="../images/dropdown.png" alt="dropdown icon">
+                            <div class="selector_box" onclick="apareceDropdown('numPoliza')"><span class="selector_box--placeholder">Todas las pólizas</span><img src="../images/dropdown.png" alt="dropdown icon">
                               <div class="selector--dropdown numPoliza">
-                                <div class="selector_li totalPolizas">Todas las pólizas</div>
+                                <div class="selector_li totalPolizas" onclick="actualizarDropdown(this, 'numPoliza')">Todas las pólizas</div>
                                 <hr>
-                                <div class="selector_li num1">75846843</div>
+                                <div class="selector_li num1" onclick="actualizarDropdown(this, 'numPoliza')">75846843</div>
                                 <hr>
                               </div>
                             </div>
@@ -179,9 +183,20 @@
                         </div>
                         <div class="container_calendar">
                           <div class="date_label">Fecha de validez</div>
-                          <div class="calendar"> 
-                            <input class="date_input" type="date" placeholder="Fecha inicio"><span>al</span>
-                            <input class="date_input" type="date" placeholder="Fecha fin">
+                          <div class="calendar__inputs"> 
+                            <div class="calendar calendar--start">
+                                    <div class="bloqueText">
+                                      <label class="bloque__label" for="calendar-start"></label>
+                                      <input class="bloque__input" type="text" id="calendar-start" name="calendar-start" placeholder="Fecha inicio">
+                                    </div><img class="btn_calendar" src="../images/calendar.png" alt="icon calendar">
+                            </div><span>al</span>
+                            <div class="calendar calendar--end">
+                                    <div class="bloqueText">
+                                      <label class="bloque__label" for="calendar-end"></label>
+                                      <input class="bloque__input" type="text" id="calendar-end" name="calendar-end" placeholder="Fecha fin">
+                                    </div><img class="btn_calendar" src="../images/calendar.png" alt="icon calendar">
+                            </div>
+                            <input type="date">
                           </div>
                         </div>
                         <div class="bloqueText">
@@ -190,15 +205,15 @@
                         </div>
                   <div class="selector--estado"> 
                           <div class="selector" id="estadoRiesgo"><span class="select_default">Estado</span>
-                            <div class="selector_box" onclick="apareceDropdown('estadoRiesgo')">Todos los estados<img src="../images/dropdown.png" alt="dropdown icon">
+                            <div class="selector_box" onclick="apareceDropdown('estadoRiesgo')"><span class="selector_box--placeholder">Todos los estados</span><img src="../images/dropdown.png" alt="dropdown icon">
                               <div class="selector--dropdown estadoRiesgo">
-                                <div class="selector_li totalEstados">Todos los estados</div>
+                                <div class="selector_li totalEstados" onclick="actualizarDropdown(this, 'estadoRiesgo')">Todos los estados</div>
                                 <hr>
-                                <div class="selector_li pendiente">Pendiente</div>
+                                <div class="selector_li pendiente" onclick="actualizarDropdown(this, 'estadoRiesgo')">Pendiente</div>
                                 <hr>
-                                <div class="selector_li pagado">Pagada</div>
+                                <div class="selector_li pagado" onclick="actualizarDropdown(this, 'estadoRiesgo')">Pagada</div>
                                 <hr>
-                                <div class="selector_li vencido">Vencido</div>
+                                <div class="selector_li vencido" onclick="actualizarDropdown(this, 'estadoRiesgo')">Vencido</div>
                                 <hr>
                               </div>
                             </div>
@@ -440,13 +455,13 @@
       <div class="paginador">
         <div class="paginador--filtros"> 
                 <div class="selector" id="filasPagina"><span class="select_default">Filas por página </span>
-                  <div class="selector_box" onclick="apareceDropdown('filasPagina')">10<img src="../images/dropdown.png" alt="dropdown icon">
+                  <div class="selector_box" onclick="apareceDropdown('filasPagina')"><span class="selector_box--placeholder">10</span><img src="../images/dropdown.png" alt="dropdown icon">
                     <div class="selector--dropdown filasPagina">
-                      <div class="selector_li filas 10">10</div>
+                      <div class="selector_li filas 10" onclick="actualizarDropdown(this, 'filasPagina')">10</div>
                       <hr>
-                      <div class="selector_li filas 15">15</div>
+                      <div class="selector_li filas 15" onclick="actualizarDropdown(this, 'filasPagina')">15</div>
                       <hr>
-                      <div class="selector_li filas 20">20</div>
+                      <div class="selector_li filas 20" onclick="actualizarDropdown(this, 'filasPagina')">20</div>
                       <hr>
                     </div>
                   </div>
